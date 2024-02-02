@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int start_hour, start_minute, end_hour, end_minute;
+    cin >> start_hour >> start_minute >> end_hour >> end_minute;
+
+    int total_start_minutes = start_hour * 60 + start_minute;
+    int total_end_minutes = end_hour * 60 + end_minute;
+
+    int duration_minutes;
+    if (total_end_minutes > total_start_minutes) {
+        duration_minutes = total_end_minutes - total_start_minutes;
+    } else {
+        duration_minutes = (24 * 60 - total_start_minutes) + total_end_minutes;
+    }
+
+    int duration_hours = duration_minutes / 60;
+    duration_minutes %= 60;
+
+    cout << "O JOGO DUROU " << duration_hours << " HORA(S) E " << duration_minutes << " MINUTO(S)" << endl;
+
+    return 0;
+}
