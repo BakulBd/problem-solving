@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+
+    char line[1001];
+    int i,l,f;
+    while(scanf("%s",line)!=EOF)
+    {
+        l=0;
+        f=0;
+        for(i=0; line[i]!='\0'; i++)
+        {
+            if(line[i]=='(')
+            {
+                l++;
+            }
+            else if(line[i]==')')
+            {
+                f++;
+                if(l>0)
+                {
+                    l--;
+                    f--;
+                }
+            }
+        }
+        if(l==0 && f==0)
+        {
+            printf("correct\n");
+        }
+        else
+        {
+            printf("incorrect\n");
+        }
+    }
+
+    return 0;
+}
