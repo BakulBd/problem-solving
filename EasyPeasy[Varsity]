@@ -1,0 +1,23 @@
+https://www.hackerrank.com/contests/inter-department-programming-contest-spring-2024/challenges/total-odds-ii/submissions/code/1374273484
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    long long int l, r;
+
+    scanf("%d", &n);
+    for (int p = 0; p < n; p++)
+    {
+        scanf("%lld %lld", &l, &r);
+
+        if (l % 2 == 0)
+            l++;
+
+        long long int x = (r - l) / 2 + 1;
+
+        printf("%lld\n", x);
+    }
+    return 0;
+}
