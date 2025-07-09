@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define endl '\n'
+#define ll long long
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    ll n,m;
+    cin>>n>>m;
+
+    vector<ll>h(n);
+    for (int i=0;i< n;i++){
+        cin>>h[i];
+    }
+
+    ll ms=0,cs=0;
+    int l=0;
+
+    for (int r=0;r<n;++r){
+        cs+=h[r];
+
+        while(cs>m){
+            cs-=h[l];
+            l++;
+        }
+
+        if(cs>ms)
+            ms=cs;
+    }
+
+    cout<<ms<<endl;
+    return 0;
+}
